@@ -20,6 +20,12 @@ app.post("/stripe/charge", cors(), async (req, res) => {
       description: "Cafe Luxembourg",
       payment_method: id,
       confirm: true,
+      automatic_payment_methods:{
+        enabled:true,
+        allow_redirects:"never"
+      },
+      return_url:"https://dashboard.stripe.com/test/logs/req_Awt8IkKRUsobDg?t=1704918674"
+    });
     });
     console.log("stripe-routes.js 19 | payment", payment);
     res.json({
